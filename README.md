@@ -1,6 +1,6 @@
 # Low Level Programming
 
-Starting out my low level program with ALX
+Starting out my low level programming with ALX
 
 ### Languages
 - C
