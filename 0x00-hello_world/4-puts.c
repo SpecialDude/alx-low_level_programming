@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * Printing some text using the puts function
+ * main - Printing some text using the puts function
  *
  * Return: 0 if all statements are executed succesfully
  */
