@@ -2,6 +2,8 @@
 
 /**
  * Printing some text using the puts function
+ *
+ * Return: 0 if all statements are executed succesfully
  */
 int main(void)
 {
