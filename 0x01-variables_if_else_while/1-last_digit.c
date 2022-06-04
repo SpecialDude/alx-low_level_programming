@@ -3,8 +3,7 @@
 #include <time.h>
 
 /**
- * main - Printing the value of the last digit of a random
- * 	  number
+ * main - Printing the value of the last digit of a random number
  *
  * Return: 0 Success
  */
