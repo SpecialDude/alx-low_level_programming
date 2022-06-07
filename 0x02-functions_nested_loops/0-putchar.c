@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
  * main - Print Test to the console
  *
@@ -11,7 +11,7 @@ int main(void)
 
 	for (int i = 0; i < 8; i++)
 	{
-		putchar(text[i]
+		_putchar(text[i]
 );
 	}
 	putchar('\n');
