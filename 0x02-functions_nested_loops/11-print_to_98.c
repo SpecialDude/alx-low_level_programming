@@ -9,25 +9,22 @@
  */
 void print_to_98(int n)
 {
-	for (; n < 99; n++)
+	if (n <= 98)
 	{
-		if (n < 0)
+		for (; n < 99; n++)
 		{
-			_putchar('-');
-			n = -n;
+			printf("%d", n);
+			if (n < 98)
+				printf(", ");
 		}
-
-		if (n > 9)
+	}
+	else
+	{
+		for (; n > 97; n--)
 		{
-			_putchar((n / 10) + '0');
-		}
-
-		_putchar((n % 10) + '0');
-
-		if (n < 98)
-		{
-			_putchar(',');
-			_putchar(' ');
+			printf("%d", n);
+			if (n > 98)
+				printf(", ");
 		}
 	}
 }
