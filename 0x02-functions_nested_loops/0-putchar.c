@@ -9,7 +9,9 @@ int main(void)
 {
 	const char* text = "_putchar";
 
-	for (int i = 0; i < 8; i++)
+	int i;
+
+	for (i = 0; i < 8; i++)
 	{
 		_putchar(text[i]
 );
