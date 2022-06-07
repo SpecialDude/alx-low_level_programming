@@ -3,11 +3,11 @@
 /**
  * main - Print Test to the console
  *
- * Return - 0 success
+ * Return: 0 on success
  */
 int main(void)
 {
-	const char* text = "_putchar";
+	const char *text = "_putchar";
 
 	int i;
 
