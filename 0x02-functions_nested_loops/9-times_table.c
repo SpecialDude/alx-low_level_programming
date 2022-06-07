@@ -20,6 +20,7 @@ void time_table(void)
 			_putchar(m + '0');
 
 			if (j < 9)
+			{
 				_putchar(',');
 
 				_putchar(' ');
@@ -28,6 +29,7 @@ void time_table(void)
 				{
 					_putchar(' ');
 				}
+			}
 		}
 		_putchar('$');
 		_putchar('\n');
