@@ -7,7 +7,7 @@
  *
  * Return: 1 if True else 0
  */
-int _islower(char c)
+int _islower(int c)
 {
-	return (c >= 'a' && c<= 'z');
+	return ((char)c >= 'a' && (char)c<= 'z');
 }
