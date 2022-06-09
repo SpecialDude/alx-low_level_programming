@@ -28,7 +28,8 @@ int main(void)
 			}
 		}
 	}
-	printf("%ld", max_factor);
+
+	printf("%ld\n", max_factor);
 
 	return (0);
 }
