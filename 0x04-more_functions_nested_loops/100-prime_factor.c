@@ -29,4 +29,6 @@ int main(void)
 		}
 	}
 	printf("%ld", max_factor);
+
+	return (0);
 }
