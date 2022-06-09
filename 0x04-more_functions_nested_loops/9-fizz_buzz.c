@@ -37,9 +37,11 @@ void fizzbuzz(void)
 /**
  * main - Entry point
  *
- * Return: void
+ * Return: 0 on success
  */
 int main(void)
 {
 	fizzbuzz();
+
+	return (0);
 }
