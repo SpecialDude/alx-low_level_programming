@@ -9,7 +9,7 @@
  */
 void print_number(int n)
 {
-	int l
+	int l;
 	int d = 10;
 	int k;
 
