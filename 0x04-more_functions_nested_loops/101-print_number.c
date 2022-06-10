@@ -9,15 +9,21 @@
  */
 void print_number(int n)
 {
-	int l = n == 0 ? 1 : 0;
+	int l
 	int d = 10;
 	int k;
+
 
 	if (n < 0)
 	{
 		n = -n;
 		_putchar('-');
 	}
+
+	if (n == 0)
+		l = 1;
+	else
+		l = 0;
 
 	k = n;
 
