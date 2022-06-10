@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_number - Prints any number character by character
@@ -9,14 +10,14 @@
  */
 void print_number(int n)
 {
-	int l = 1;
-	int d = 100;
+	int l = n == 0 ? 1 : 0;
+	int d = 10;
 	int k;
 
 	if (n < 0)
 	{
-		_putchar('-');
 		n = -n;
+		_putchar('-');
 	}
 
 	k = n;
@@ -25,15 +26,16 @@ void print_number(int n)
 	{
 		k /= d;
 
-		d *= 10;
-
 		l++;
 	}
 
-
-	for (k = l; k > 0; k--)
+	for (k = l - 1; k > -1; k--)
 	{
-		d = 10 * k;
+		int p  = 0;
+		d = 1;
+
+		for (; p < k; p++)
+			d *= 10;
 
 		_putchar(((n / d) % 10) + '0');
 	}
