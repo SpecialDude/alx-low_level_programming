@@ -35,7 +35,9 @@ void print_number(int n)
 		d = 1;
 
 		for (; p < k; p++)
+		{
 			d *= 10;
+		}
 
 		_putchar(((n / d) % 10) + '0');
 	}
