@@ -11,7 +11,7 @@ void print_number(int n)
 {
 	int l = 1;
 	int d = 100;
-	int k
+	int k;
 
 	if (n < 0)
 	{
