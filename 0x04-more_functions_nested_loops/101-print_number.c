@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_number - Prints any number character by character
@@ -32,6 +31,7 @@ void print_number(int n)
 	for (k = l - 1; k > -1; k--)
 	{
 		int p  = 0;
+
 		d = 1;
 
 		for (; p < k; p++)
