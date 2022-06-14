@@ -3,7 +3,7 @@
 /**
  * reset_to_98 - Reset a number to 98
  *
- * @*n: Pointer to the number to reset
+ * @n: Pointer to the number to reset
  *
  * Return: void
  */
