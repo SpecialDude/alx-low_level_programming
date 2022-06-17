@@ -9,6 +9,7 @@
  * @n: Number
  *
  * Return: Pointer to dest str
+ */
 char *_strncat(char *dest, char *src, int n)
 {
 	int d = strlen(dest);
