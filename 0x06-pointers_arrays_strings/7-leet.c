@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * leet - Code Up a string
+ *
+ * @c: String
+ * Return: char* 
+ */
 char *leet(char *c)
 {
 	int i, j;
