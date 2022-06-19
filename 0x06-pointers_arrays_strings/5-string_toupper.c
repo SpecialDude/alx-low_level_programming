@@ -2,9 +2,9 @@
 
 /**
  * string_toupper - Change lowercases to uppercases
- * 
- * @char: String
- * 
+ *
+ * @c: String
+ *
  * Return: Pointer to string
  */
 char *string_toupper(char *c)
@@ -17,6 +17,7 @@ char *string_toupper(char *c)
         {
             *(c + i) = (char)((int)*(c + i) - 32);
         }
+        i++;
     }
 
     return (c);
