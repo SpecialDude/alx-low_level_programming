@@ -4,7 +4,7 @@
  * leet - Code Up a string
  *
  * @c: String
- * Return: char* 
+ * Return: char*
  */
 char *leet(char *c)
 {
