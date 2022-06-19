@@ -20,10 +20,12 @@ char *cap_string(char *c)
 	{
 		if (*(c + i) == ' ')
 		{
-			if (*(c + i) >= 'a' && *(c + i) <= 'z')
+			if (*(c + i + 1) >= 'a' && *(c + i + 1) <= 'z')
 			{
-				*(c + i) = (char)((int)*(c + i) - 32);
+				*(c + i + 1) = (char)((int)*(c + i + 1) - 32);
 			}
 		}
 	}
+
+	return (c);
 }
