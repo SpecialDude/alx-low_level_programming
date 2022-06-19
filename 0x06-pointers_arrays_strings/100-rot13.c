@@ -19,7 +19,10 @@ char *rot13(char *c)
 		for (j = 0; alpha[j] != '\0'; j++)
 		{
 			if (c[i] == alpha[j])
+			{
 				c[i] = alph4[j];
+				break;
+			}
 		}
 	}
 
