@@ -5,7 +5,8 @@
  *
  * @str: string
  * @c: Char
- * @return int 
+ *
+ * Return: int
  */
 int char_in(char *str, char c)
 {
@@ -21,9 +22,9 @@ int char_in(char *str, char c)
 }
 /**
  * cap_string - Capitalize Each word
- * 
+ *
  * @c: String
- * 
+ *
  * Return: Pointer to string
  */
 char *cap_string(char *c)
