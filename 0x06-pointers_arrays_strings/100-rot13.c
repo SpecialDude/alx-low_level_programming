@@ -14,7 +14,7 @@ char *rot13(char *c)
 	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *alph4 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; c[i] != "\0"; i++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
 		for (j = 0; alpha[j] != '\0'; j++)
 		{
