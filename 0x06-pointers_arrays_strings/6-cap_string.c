@@ -29,7 +29,7 @@ int char_in(char *str, char c)
  */
 char *cap_string(char *c)
 {
-	int i = 0;
+	int i = 1;
 
 	char seps[13] = {' ', '\t', '\n', ',', ';', '.',
 		'!', '?', '"', '(', ')', '{', '}'};
@@ -48,6 +48,7 @@ char *cap_string(char *c)
 				*(c + i + 1) = (char)((int)*(c + i + 1) - 32);
 			}
 		}
+		i++;
 	}
 
 	return (c);
