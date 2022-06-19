@@ -8,7 +8,7 @@
  *
  * Return: 1 If strs are the 0 otherwise
  */
-int _strcmp(char *s1, char *s2);
+int _strcmp(char *s1, char *s2)
 {
 	while (*s1 == *s2)
 	{
@@ -19,5 +19,5 @@ int _strcmp(char *s1, char *s2);
 		s2++;
 	}
 
-	return (int)(*s1 - *s2);
+	return (*s1 - *s2);
 }
