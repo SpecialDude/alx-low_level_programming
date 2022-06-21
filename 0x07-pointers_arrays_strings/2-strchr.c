@@ -28,6 +28,12 @@ char *_strchr(char *s, char c)
 }
 
 /**
+ * commentedCode - A block of commented code
+ * 
+ * @s: String
+ * @c: Char
+ * Return: char* 
+ *
  * char *_strchr(char *s, char c)
  * {
  *	while ((*s) != '\0')
