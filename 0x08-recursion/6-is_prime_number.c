@@ -19,7 +19,7 @@ int is_prime(int n, int i)
 
 /**
  * is_prime_number - Check if a number is prime recursively
- * 
+ *
  * @n: number
  *
  * Return: int
