@@ -23,4 +23,8 @@ int main()
     printf("2 power 5: %d\n", _pow_recursion(2, 5));
     printf("2 power 3: %d\n", _pow_recursion(2, 3));
     printf("1 power 10: %d\n", _pow_recursion(1, 10));
+
+    printf("Sqrt of 5: %d\n", _sqrt_recursion(5));
+    printf("Sqrt of 25: %d\n", _sqrt_recursion(25));
+
 }
