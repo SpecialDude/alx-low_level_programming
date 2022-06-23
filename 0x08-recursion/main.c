@@ -1,4 +1,6 @@
 #include "main.h"
+#include <unistd.h>
+#include <stdio.h>
 
 int main()
 {
@@ -10,4 +12,8 @@ int main()
 
     _print_rev_recursion(m);
     _print_rev_recursion(s);
+    _putchar('\n');
+
+    printf("lenght s: %d\n", _strlen_recursion(s));
+    printf("lenght m: %d\n", _strlen_recursion(m));
 }
