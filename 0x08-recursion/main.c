@@ -19,4 +19,8 @@ int main()
 
     printf("Factorial 5: %d\n", factorial(5));
     printf("Factorial 10: %d\n", factorial(10));
+
+    printf("2 power 5: %d\n", _pow_recursion(2, 5));
+    printf("2 power 3: %d\n", _pow_recursion(2, 3));
+    printf("1 power 10: %d\n", _pow_recursion(1, 10));
 }
