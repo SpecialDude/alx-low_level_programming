@@ -16,4 +16,7 @@ int main()
 
     printf("lenght s: %d\n", _strlen_recursion(s));
     printf("lenght m: %d\n", _strlen_recursion(m));
+
+    printf("Factorial 5: %d\n", factorial(5));
+    printf("Factorial 10: %d\n", factorial(10));
 }
