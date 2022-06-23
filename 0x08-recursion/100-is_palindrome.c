@@ -11,7 +11,7 @@
  */
 int is_palind(char *s, int i, int l)
 {
-	if (*(s + i) != *(s +  - 1))
+	if (*(s + i) != *(s + l - 1))
 		return (0);
 	if (i >= l)
 		return (1);
