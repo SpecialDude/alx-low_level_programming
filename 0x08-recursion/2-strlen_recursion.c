@@ -5,7 +5,7 @@
  *
  * @s: String
  *
- * Return: int 
+ * Return: int
  */
 int _strlen_recursion(char *s)
 {
