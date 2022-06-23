@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _pow_recursion
- * 
+ * _pow_recursion - Power of a number recursively
+ *
  * @x: base number
  * @y: power
  *
