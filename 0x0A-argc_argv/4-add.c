@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * main - Add Command Line Args
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
 	{
 		i = atoi(argv[j]);
 
-		if (i == 0 && argv[j] != "0")
+		if (i == 0 && !strcmp(argv[j], "0"))
 		{
 			printf("Error\n");
 
