@@ -18,6 +18,12 @@ int main(int argc, char *argv[])
 
 	sum = 0;
 
+	if (argc < 2)
+	{
+		printf("%d\n", 0);
+		return (EXIT_SUCCESS);
+	}
+
 	for (j = 0; j < argc; j++)
 	{
 		i = atoi(argv[j]);
