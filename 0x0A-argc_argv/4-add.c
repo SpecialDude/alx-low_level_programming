@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
 		if (i == 0 && !strcmp(argv[j], "0"))
 		{
 			printf("Error\n");
-
 			return (1);
 		}
 		sum += i;
