@@ -14,7 +14,30 @@ int main(int argc, char *argv[])
 {
 	int i, sum, j;
 
+	int charOnly = 1;
+
 	sum = 0;
+
+	for (j = 0; j < argc; j++)
+	{
+		i = atoi(argv[j]);
+
+		if (i == 0 && !strcmp(argv[j], "0"))
+		{
+			;
+		}
+		else
+		{
+			charOnly = 0;
+			break;
+		}
+	}
+
+	if (charOnly)
+	{
+		printf("%d\n", sum);
+		return (EXIT_SUCCESS);
+	}
 
 	for (j = 0; j < argc; j++)
 	{
