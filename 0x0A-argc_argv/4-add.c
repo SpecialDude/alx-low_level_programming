@@ -11,15 +11,15 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, sum, j;
 
 	sum = 0;
 
-	while(*++argv)
+	for (j = 0; j < argc; j++)
 	{
-		i = atoi(*argv);
+		i = atoi(argv[i]);
 
-		if (i == 0 && *argv != "0")
+		if (i == 0 && argv[i] != "0")
 		{
 			printf("Error\n");
 
