@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 	int i, sum, j;
 
 	int charOnly = 1;
+	
 	sum = 0;
 
 	for (j = 0; j < argc; j++)
