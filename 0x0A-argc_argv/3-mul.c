@@ -3,7 +3,7 @@
 
 /**
  * main - Multiplies two cmd args
- * 
+ *
  * @argc: Args count
  * @argv: Arg Array
  *
