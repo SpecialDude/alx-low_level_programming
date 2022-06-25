@@ -14,29 +14,11 @@ int main(int argc, char *argv[])
 {
 	int i, sum, j;
 
-	int charOnly = 1;
-
 	sum = 0;
 
 	if (argc < 2)
 	{
 		printf("%d\n", 0);
-		return (EXIT_SUCCESS);
-	}
-
-	for (j = 0; j < argc; j++)
-	{
-		i = atoi(argv[j]);
-		if (!(i == 0 && !strcmp(argv[j], "0")))
-		{
-			charOnly = 0;
-			break;
-		}
-	}
-
-	if (charOnly)
-	{
-		printf("%d\n", sum);
 		return (EXIT_SUCCESS);
 	}
 
