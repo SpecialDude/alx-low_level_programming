@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - Prints the Program's name
+ *
+ * @argc: Number of Command line arguments
+ * @argv: Array of Command line arguments
+ *
+ * Return: EXIT_SUCCESS
+ */
+int main(int argc, char **argv)
+{
+	printf("%s\n", argv[0]);
+
+	return (EXIT_SUCCESS);
+}
