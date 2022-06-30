@@ -13,18 +13,15 @@
 char *str_concat(char *s1, char *s2)
 {
 	char* newstr;
-	int l1, l2;
+	int l1 = 0;
+	int l2 = 0;
 	int i = 0;
 	int j = 0;
 
-	if (s1 == NULL)
-		l1 = 0;
-	else
+	if (s1 != NULL)
 		l1 = strlen(s1);
 
-	if (s2 == NULL)
-		l2 = 0;
-	else
+	if (s2 != NULL)
 		l2 = strlen(s2);
 
 	newstr = malloc(sizeof(char) * (l2 + l2));
