@@ -45,12 +45,12 @@ void printmatrix(int**mat, int w, int m)
 int main(int ac, char *av[])
 {
     /* char *k; */
-    /* char* str = argstostr(ac, av);
+    char* str = argstostr(ac, av);
 
-    printf("%s", str); */
+    printf("%s", str);
 
-    printf("%d", ac);
-    printarray(av[0], ac);
+    /* printf("%d", ac);
+    printarray(av[0], ac); */
 
     /* printarray(create_array(20, 'A'), 20); */
 
@@ -62,7 +62,7 @@ int main(int ac, char *av[])
 
     /* printmatrix(alloc_grid(5, 7), 5, 7); */
 
-    printarray2(strtow("My name is Adetayo and I Love Jesus My Saviour"));
+    /* printarray2(strtow("My name is Adetayo and I Love Jesus My Saviour")); */
 
 
     return (0);
