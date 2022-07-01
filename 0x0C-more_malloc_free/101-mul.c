@@ -53,35 +53,9 @@ int isalldigit(char *str)
 }
 
 /**
- * print_number - prints an integer
- * @n: integer to be printed
- */
-void print_number(int n)
-{
-	unsigned int n1;
-
-	if (n < 0)
-	{
-		n1 = -n;
-		_putchar('-');
-	}
-	else
-	{
-		n1 = n;
-	}
-
-	if (n1 / 10)
-	{
-		print_number(n1 / 10);
-	}
-
-	_putchar((n1 % 10) + '0');
-}
-
-/**
  * _strlen - returns the length of a string
  *
- * @s: string to evaluate
+ * @s: string
  *
  * Return: the length of the string
  */
@@ -94,6 +68,16 @@ int _strlen(char *s)
 		i++;
 	}
 	return (i);
+}
+
+/**
+ * print_error - Print program error
+ *
+ */
+void print_error(void)
+{
+	_putstr("Error\n");
+	exit(98);
 }
 
 /**
@@ -111,23 +95,16 @@ int main(int ac, char *av[])
 	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
 	if (ac != 3 || !(isalldigit(av[1]) && isalldigit(av[2])))
-	{
-		_putstr("Error\n");
-		exit(98);
-	}
-
+		print_error();
 	s1 = av[1], s2 = av[2];
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
-
 	result = malloc(sizeof(int) * len);
 	if (!result)
 		return (1);
-
 	for (i = 0; i <= len1 + len2; i++)
 		result[i] = 0;
-
 	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[len1] - '0';
@@ -153,6 +130,5 @@ int main(int ac, char *av[])
 		_putchar('0');
 	_putchar('\n');
 	free(result);
-
 	return (EXIT_SUCCESS);
 }
