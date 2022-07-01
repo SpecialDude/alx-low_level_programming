@@ -1,51 +1,20 @@
-#include "main.h"
 #include <stdlib.h>
-#include <unistd.h>
-
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+#include <stdio.h>
+#include "main.h"
 
 /**
- * _putstr - Prints a String
+ * is_digit - checks if a string contains a non-digit char
+ * @s: string
  *
- * @str: string to print
+ * Return: 0 if a non-digit is found, 1 otherwise
  */
-void _putstr(char *str)
+int is_digit(char *s)
 {
 	int i = 0;
 
-	while (str[i])
+	while (s[i])
 	{
-		_putchar(str[i]);
-		i++;
-	}
-
-}
-
-/**
- * isalldigit - Check is string contains all digit
- *
- * @str: String
- *
- * Return: int
- */
-int isalldigit(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		if (str[i] < '0' || str[i] > '9')
+		if (s[i] < '0' || s[i] > '9')
 			return (0);
 		i++;
 	}
@@ -54,10 +23,9 @@ int isalldigit(char *str)
 
 /**
  * _strlen - returns the length of a string
- *
  * @s: string
  *
- * Return: the length of the string
+ * Return: int
  */
 int _strlen(char *s)
 {
@@ -71,32 +39,29 @@ int _strlen(char *s)
 }
 
 /**
- * print_error - Print program error
- *
+ * errors - handles errors for main
  */
-void print_error(void)
+void errors(void)
 {
-	_putstr("Error\n");
+	printf("Error\n");
 	exit(98);
 }
 
 /**
- * main - Multiply two numbers
- * supplied in program's argument
+ * main - multiplies two positive numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * @ac: Number of arguments supplied
- * @av: Array of arguments
- *
- * Return: int
+ * Return: always 0 (Success)
  */
-int main(int ac, char *av[])
+int main(int argc, char *argv[])
 {
 	char *s1, *s2;
 	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
-	if (ac != 3 || !(isalldigit(av[1]) && isalldigit(av[2])))
-		print_error();
-	s1 = av[1], s2 = av[2];
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		errors();
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
@@ -130,5 +95,5 @@ int main(int ac, char *av[])
 		_putchar('0');
 	_putchar('\n');
 	free(result);
-	return (EXIT_SUCCESS);
+	return (0);
 }
