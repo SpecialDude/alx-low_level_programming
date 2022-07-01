@@ -79,6 +79,24 @@ void print_number(int n)
 }
 
 /**
+ * _strlen - returns the length of a string
+ *
+ * @s: string to evaluate
+ *
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
  * main - Multiply two numbers
  * supplied in program's argument
  *
@@ -109,7 +127,7 @@ int main(int ac, char *av[])
 
 	for (i = 0; i <= len1 + len2; i++)
 		result[i] = 0;
-		
+
 	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[len1] - '0';
