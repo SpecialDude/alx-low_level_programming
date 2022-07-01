@@ -41,7 +41,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	newptr = malloc(new_size);
 
-	if (newptr != NULL)
+	if (newptr != NULL && ptr != NULL)
 		memcpy(newptr, ptr, _min(old_size, new_size));
 
 	if (ptr != NULL)
