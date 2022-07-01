@@ -9,5 +9,8 @@ int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 unsigned int _min(unsigned int a, unsigned int b);
 unsigned int _strlen(char *str);
+void _putstr(char *str);
+int isalldigit(char *str);
+void print_number(int n);
 
 #endif
