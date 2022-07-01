@@ -99,18 +99,17 @@ int main(int ac, char *av[])
 	}
 
 	s1 = av[1], s2 = av[2];
-
-	print_number(atoi(av[1]) * atoi(av[2]));
-	_putchar('\n');
-
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
 	len = len1 + len2 + 1;
+
 	result = malloc(sizeof(int) * len);
 	if (!result)
 		return (1);
+
 	for (i = 0; i <= len1 + len2; i++)
 		result[i] = 0;
+		
 	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
 		digit1 = s1[len1] - '0';
