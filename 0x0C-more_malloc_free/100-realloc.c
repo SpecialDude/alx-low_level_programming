@@ -29,8 +29,13 @@ unsigned int _min(unsigned int a, unsigned int b)
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *newptr;
+	unsigned int size;
 
-	if (ptr != NULL)
+	if (ptr == NULL)
+	{
+		new_size = old_size + new_size;
+	}
+	else
 	{
 		free(ptr);
 	}
