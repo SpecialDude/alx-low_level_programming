@@ -31,7 +31,7 @@ int main(int ac, char *av[])
 	str = (char *)main;
 
 	for (i = 0; i < byte - 1; i++)
-		printf("%02hhx", str[i]);
+		printf("%02hhx ", str[i]);
 
 	printf("%02hhx\n", str[byte - 1]);
 
