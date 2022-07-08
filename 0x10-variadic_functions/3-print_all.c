@@ -18,6 +18,10 @@ void print_all(const char * const format, ...)
 	char f, c_arg, *s_arg, *separator = ", ";
 	double f_arg;
 
+	if (format == NULL)
+		printf("\n");
+		return;
+
 	va_start(ap, format);
 	while (format[i])
 	{
