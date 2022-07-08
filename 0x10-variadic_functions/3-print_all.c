@@ -21,14 +21,12 @@ void print_all(const char * const format, ...)
 	if (format == NULL)
 		printf("\n");
 		return;
-
 	va_start(ap, format);
 	while (format[i])
 	{
 		f = format[i++];
 		if (format[i] == '\0')
 			separator = "";
-
 		switch (f)
 		{
 		case 'c':
