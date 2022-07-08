@@ -14,32 +14,28 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i = 0, i_arg;
-	char f, c_arg, *s_arg, *separator = ", ";
-	double f_arg;
+	int i = 0;
+	char *s_arg, *separator = "";
 
-	if (format == NULL)
+	if (!format)
+	{
 		printf("\n");
 		return;
+	}
+
 	va_start(ap, format);
 	while (format[i])
 	{
-		f = format[i++];
-		if (format[i] == '\0')
-			separator = "";
-		switch (f)
+		switch (format[i++])
 		{
 		case 'c':
-			c_arg = va_arg(ap, int);
-			printf("%c%s", c_arg, separator);
+			printf("%s%c", separator, va_arg(ap, int));
 			break;
 		case 'i':
-			i_arg = va_arg(ap, int);
-			printf("%d%s", i_arg, separator);
+			printf("%s%d", separator, va_arg(ap, int));
 			break;
 		case 'f':
-			f_arg = va_arg(ap, double);
-			printf("%f%s", f_arg, separator);
+			printf("%s%f", separator, va_arg(ap, double));
 			break;
 		case 's':
 			s_arg = va_arg(ap, char *);
@@ -48,8 +44,9 @@ void print_all(const char * const format, ...)
 			printf("%s%s", s_arg, separator);
 			break;
 		default:
-			break;
+			continue;
 		}
+		separator = ", ";
 	}
 	va_end(ap);
 	printf("\n");
