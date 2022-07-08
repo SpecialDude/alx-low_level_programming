@@ -15,7 +15,7 @@ void print_all(const char * const format, ...)
 {
 	va_list ap;
 	int i = 0, i_arg;
-	char f, c_arg, *s_arg, *separator;
+	char f, c_arg, *s_arg, *separator = ", ";
 	double f_arg;
 
 	va_start(ap, format);
@@ -24,8 +24,6 @@ void print_all(const char * const format, ...)
 		f = format[i++];
 		if (format[i] == '\0')
 			separator = "";
-		else
-			separator = ", ";
 
 		switch (f)
 		{
