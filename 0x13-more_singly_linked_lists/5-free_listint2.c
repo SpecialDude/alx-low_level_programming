@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * free_listint - Frees allocated memory for a linked list
+ * free_listint2 - Frees allocated memory for a linked list
  * and sets head to NULL
  *
  * @head: Head of the singly linked list
