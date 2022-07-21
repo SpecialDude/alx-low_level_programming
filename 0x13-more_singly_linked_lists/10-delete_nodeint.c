@@ -32,7 +32,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		i++;
 	}
 
-	if (ptr)
+	if (ptr && ptr->next)
 	{
 		deleted = ptr->next;
 		ptr->next = ptr->next->next;
