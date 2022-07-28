@@ -35,10 +35,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(buf);
 		return (0);
 	}
-
+	buf[status] = '\0';
 	close(fd);
 
-	status = write(2, buf, letters);
+	status = write(2, buf, status);
 
 	if (status < 0)
 	{
