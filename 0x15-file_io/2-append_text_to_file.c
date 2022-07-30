@@ -20,13 +20,10 @@ int append_text(const char *filename, char *text_content)
 	if (fd < 0)
 		return (-1);
 
-	while (text_content[i])
+	if (text_content)
 	{
-		i++;
-	}
-
-	if (i > 0)
-	{
+		while (text_content[i])
+			i++;
 		s = write(fd, text_content, i);
 		if (s != i)
 			return (-1);
