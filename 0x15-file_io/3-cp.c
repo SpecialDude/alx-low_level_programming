@@ -13,7 +13,7 @@
 int main(int ac, char **av)
 {
 	int fdw, fdr, closestatusW, closestatusR, r;
-	char buff[BUFIZ];
+	char buff[BUFSIZ];
 
 	if (ac != 3)
 	{
@@ -26,8 +26,8 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fdw = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	while ((r = read(fdr, buff, BUFIZ)) > 0)
+	fdw = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((r = read(fdr, buff, BUFSIZ)) > 0)
 	{
 		if (fdw < 0 || write(fdw, buff, r) != r)
 		{
