@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * append_text - Append Text to the end of file
+ * append_text_to_file - Append Text to the end of file
  *
  * @filename: Filename of an existing file
  * @text_content: Content to write
  *
  * Return: 1 on success -1 otherwise
  */
-int append_text(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, s, i = 0;
 
