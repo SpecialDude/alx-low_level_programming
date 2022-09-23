@@ -1,0 +1,14 @@
+#!/bin/bash
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/5-main.c *.c -o ./builds/print
+
+if [ "$?" = "0" ];
+then
+    ./builds/print
+
+    echo -e "Test Completed, Cleaning up...\n"
+
+    rm -v ./builds/print
+else
+    echo -e "Build Failed!!!\n"
+fi
