@@ -1,14 +1,14 @@
 #!/bin/bash
 
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/3-main.c *.c -o ./builds/key_index
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/3-main.c *.c -o ./builds/set
 
 if [ "$?" = "0" ];
 then
-    ./builds/key_index
+    ./builds/set
 
     echo -e "Test Completed, Cleaning up...\n"
 
-    rm -v ./builds/key_index
+    rm -v ./builds/set
 else
     echo -e "Build Failed!!!\n"
 fi
