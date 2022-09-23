@@ -4,7 +4,7 @@
  * hash_table_set - Updates an hash table
  *
  * @ht: An Hash Table
- * @key: string value (cannot be empty or NULL)
+ * @key: string value (cannot be empty)
  * @value: string value (value to key)
  *
  * Return: int (1 on success 0 otherwise)
@@ -24,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(node->key, key) == 0)
 		{
-			node->value = (char *)value;
+			node->value = strdup(value);
 			return (1);
 		}
 
@@ -36,8 +36,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_node == NULL)
 		return (0);
 
-	new_node->key = (char *)key;
-	new_node->value = (char *)value;
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
 
 	if (node)
 	{
