@@ -1,16 +1,14 @@
 #!/bin/bash
 
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/1-main.c 1-djb2.c -o ./builds/create_hash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/1-main.c 1-djb2.c -o ./builds/dbj2
 
 if [ "$?" = "0" ];
 then
-    ./builds/create_hash
-
-    valgrind ./builds/create_hash
+    ./builds/dbj2
 
     echo -e "Test Completed, Cleaning up...\n"
 
-    rm -v ./builds/create_hash
+    rm -v ./builds/dbj2
 else
     echo -e "Build Failed!!!\n"
 fi
