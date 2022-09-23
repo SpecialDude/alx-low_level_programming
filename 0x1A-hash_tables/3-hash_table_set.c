@@ -36,11 +36,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_node == NULL)
 		return (0);
 
+	new_node->key = (char *)key;
+	new_node->value = (char *)value;
+
 	if (node)
 	{
-		new_node->key = (char *)key;
-		new_node->value = (char *)value;
-
 		new_node->next = node->next;
 		node->next = new_node;
 	}
