@@ -22,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	while (node && node->next)
 	{
-		if (node->key == key)
+		if (strcmp(node->key, key) == 0)
 		{
 			node->value = (char *)value;
 			return (1);
