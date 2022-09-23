@@ -1,0 +1,14 @@
+#!/bin/bash
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/3-main.c *.c -o ./builds/key_index
+
+if [ "$?" = "0" ];
+then
+    ./builds/key_index
+
+    echo -e "Test Completed, Cleaning up...\n"
+
+    rm -v ./builds/key_index
+else
+    echo -e "Build Failed!!!\n"
+fi
