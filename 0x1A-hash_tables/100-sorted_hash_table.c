@@ -98,7 +98,6 @@ void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 
 	if (!ht)
 		return;
-
 	if (ht->shead == NULL)
 	{
 		ht->shead = new_node;
@@ -108,7 +107,6 @@ void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 
 	node = ht->shead;
 	prev_node = NULL;
-
 
 	while (node)
 	{
@@ -124,24 +122,20 @@ void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 		node->sprev = new_node;
 		ht->shead = new_node;
 	}
+	else if (node == NULL)
+	{
+		prev_node->snext = new_node;
+		new_node->sprev = prev_node;
+		ht->stail = new_node;
+	}
 	else
 	{
-		if (node == NULL)
-		{
-			prev_node->snext = new_node;
-			new_node->sprev = prev_node;
-			ht->stail = new_node;
-		}
-		else
-		{
-			new_node->sprev = prev_node;
-			new_node->snext = node;
+		new_node->sprev = prev_node;
+		new_node->snext = node;
+		prev_node->snext = new_node;
 
-			prev_node->snext = new_node;
-
-			if (node)
-				node->sprev = new_node;
-		}
+		if (node)
+			node->sprev = new_node;
 	}
 }
 
