@@ -92,14 +92,21 @@ shash_node_t *find_tail_node(const shash_table_t *ht)
  * @head: Head of list
  * @new_node: New node to add
  */
-void insert_into_list(shash_node_t **head, shash_node_t *new_node)
+void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 {
 	shash_node_t *node, *prev_node;
 
-	if (!head || !(*head))
+	if (!ht)
 		return;
 
-	node = *head;
+	if (ht->shead == NULL)
+	{
+		ht->shead = new_node;
+		ht->stail = new_node;
+		return;
+	}
+
+	node = ht->shead;
 	prev_node = NULL;
 
 
@@ -115,6 +122,7 @@ void insert_into_list(shash_node_t **head, shash_node_t *new_node)
 	{
 		new_node->snext = node;
 		node->sprev = new_node;
+		ht->shead = new_node;
 	}
 	else
 	{
@@ -122,6 +130,7 @@ void insert_into_list(shash_node_t **head, shash_node_t *new_node)
 		{
 			prev_node->snext = new_node;
 			new_node->sprev = prev_node;
+			ht->stail = new_node;
 		}
 		else
 		{
@@ -148,7 +157,7 @@ void insert_into_list(shash_node_t **head, shash_node_t *new_node)
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	shash_node_t *node, *new_node, *head;
+	shash_node_t *node, *new_node;
 
 	if (!ht || !key || !strcmp(key, "") || !value)
 		return (0);
@@ -182,8 +191,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	new_node->snext = NULL;
 	new_node->sprev = NULL;
-	head = find_head_node(ht);
-	insert_into_list(&head, new_node);
+	insert_into_list(ht, new_node);
 	ht->array[index] = new_node;
 
 	return (1);
@@ -232,7 +240,7 @@ void shash_table_print(const shash_table_t *ht)
 	if (!ht)
 		return;
 
-	node = find_head_node(ht);
+	node = ht->shead;
 
 	printf("{");
 
@@ -261,7 +269,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	if (!ht)
 		return;
 
-	node = find_tail_node(ht);
+	node = ht->stail;
 
 	printf("{");
 
