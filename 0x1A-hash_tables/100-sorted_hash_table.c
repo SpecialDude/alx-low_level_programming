@@ -89,7 +89,7 @@ shash_node_t *find_tail_node(const shash_table_t *ht)
 /**
  * insert_into_list - Inserts into list (Orderly)
  *
- * @head: Head of list
+ * @ht: Hash Table
  * @new_node: New node to add
  */
 void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
@@ -107,7 +107,6 @@ void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 
 	node = ht->shead;
 	prev_node = NULL;
-
 	while (node)
 	{
 		if (strcmp(node->key, new_node->key) > 0)
@@ -115,7 +114,6 @@ void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 		prev_node = node;
 		node = node->snext;
 	}
-
 	if (prev_node == NULL)
 	{
 		new_node->snext = node;
@@ -133,7 +131,6 @@ void insert_into_list(shash_table_t *ht, shash_node_t *new_node)
 		new_node->sprev = prev_node;
 		new_node->snext = node;
 		prev_node->snext = new_node;
-
 		if (node)
 			node->sprev = new_node;
 	}
