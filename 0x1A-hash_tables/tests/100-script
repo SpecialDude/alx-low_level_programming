@@ -1,0 +1,16 @@
+#!/bin/bash
+
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ./tests/100-main.c *.c -o ./builds/ss
+
+if [ "$?" = "0" ];
+then
+    ./builds/ss
+
+    valgrind ./builds/ss
+
+    echo -e "Test Completed, Cleaning up...\n"
+
+    rm -v ./builds/ss
+else
+    echo -e "Build Failed!!!\n"
+fi
