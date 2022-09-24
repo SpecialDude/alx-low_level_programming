@@ -103,7 +103,7 @@ void insert_into_list(shash_node_t **head, shash_node_t *new_node)
 	prev_node = NULL;
 
 
-	while (node && node->snext)
+	while (node)
 	{
 		if (strcmp(node->key, new_node->key) > 0)
 			break;
@@ -118,13 +118,21 @@ void insert_into_list(shash_node_t **head, shash_node_t *new_node)
 	}
 	else
 	{
-		new_node->sprev = prev_node;
-		new_node->snext = node;
+		if (node == NULL)
+		{
+			prev_node->snext = new_node;
+			new_node->sprev = prev_node;
+		}
+		else
+		{
+			new_node->sprev = prev_node;
+			new_node->snext = node;
 
-		prev_node->snext = new_node;
+			prev_node->snext = new_node;
 
-		if (node)
-			node->sprev = new_node;
+			if (node)
+				node->sprev = new_node;
+		}
 	}
 }
 
