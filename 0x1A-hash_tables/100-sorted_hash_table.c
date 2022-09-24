@@ -96,13 +96,15 @@ void insert_into_list(shash_node_t **head, shash_node_t *new_node)
 {
 	shash_node_t *node, *prev_node;
 
+	new_node->snext = NULL;
+	new_node->sprev = NULL;
+
 	if (!head || !(*head))
 		return;
 
 	node = *head;
 	prev_node = NULL;
-	new_node->snext = NULL;
-	new_node->sprev = NULL;
+
 
 	while (node && node->snext)
 	{
@@ -172,11 +174,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		new_node->next = node;
 	else
 		new_node->next = NULL;
-		
+
 	head = find_head_node(ht);
 
-	if (head)
-		insert_into_list(&head, new_node);
+	insert_into_list(&head, new_node);
 
 	ht->array[index] = new_node;
 	return (1);
