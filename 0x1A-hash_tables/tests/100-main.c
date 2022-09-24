@@ -28,7 +28,7 @@ int main(void)
     shash_table_set(ht, "a", "6");
     shash_table_print(ht);
     shash_table_set(ht, "m", "7");
-    shash_table_set(ht, "y", "ADETAYO");
+    shash_table_set(ht, "awa", "ADETAYO");
     shash_table_print(ht);
     shash_table_print_rev(ht);
 

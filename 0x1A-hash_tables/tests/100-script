@@ -6,7 +6,7 @@ if [ "$?" = "0" ];
 then
     ./builds/ss
 
-    valgrind ./builds/ss
+    # valgrind ./builds/ss
 
     echo -e "Test Completed, Cleaning up...\n"
 
