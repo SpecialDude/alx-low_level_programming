@@ -6,13 +6,9 @@ RM = rm -f
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
 clean:
-	$(RM) $(wildcard *~$(NAME))
-
+	$(RM) *~ $(NAME)
 oclean:
 	$(RM) $(OBJ)
-
 fclean: clean oclean
-
 re: oclean all
