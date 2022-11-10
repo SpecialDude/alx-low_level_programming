@@ -9,10 +9,10 @@ returns the perimeter of an island described with grid
 def island_perimeter(grid):
     """Returns the perimeter of an island
 
-	Args:
-		grid: A list of list describing the island
+        Args:
+            grid: A list of list describing the island
 
-	Returns: An integer (Perimeter of the island)
+        Returns: An integer (Perimeter of the island)
     """
 
     c = 0
