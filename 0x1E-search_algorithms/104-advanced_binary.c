@@ -13,9 +13,6 @@
  */
 int find_first_index(int *array, int value, size_t low, size_t index)
 {
-	printf("Searching in array: ");
-	print_array(array, low, index);
-
 	if ((index - 1 < low) || (array[index - 1] != value))
 		return (index);
 
@@ -34,7 +31,7 @@ int find_first_index(int *array, int value, size_t low, size_t index)
  */
 int ad_binary(int *array, int value, size_t low, size_t high)
 {
-	size_t mid;
+	size_t mid, first;
 
 	if (low > high)
 		return (-1);
@@ -48,8 +45,18 @@ int ad_binary(int *array, int value, size_t low, size_t high)
 		return (ad_binary(array, value, low, mid - 1));
 	else if (array[mid] < value)
 		return (ad_binary(array, value, mid + 1, high));
-	else
-		return (find_first_index(array, value, low, mid));
+
+	first = find_first_index(array, value, low, mid);
+
+	if (first != mid)
+	{
+		printf("Searching in array: ");
+		print_array(array, low, mid);
+		printf("Searching in array: ");
+		print_array(array, first, mid);
+	}
+
+	return (first);
 }
 
 /**
